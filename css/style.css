@@ -153,6 +153,12 @@ header {
   justify-content: center;
   gap: 20px;
 }
+.footer {
+  background-color: rgb(2, 0, 49);
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
 @media screen and (max-width: 500px) {
   header {
     gap: 20px;
