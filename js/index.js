@@ -1,17 +1,4 @@
-let icon = document.querySelector(".icon");
-let mobileLinks = document.querySelector(".mobile-links");
-let showMenu = true;
 let productContainer = document.querySelector(".productContainer");
-
-icon.addEventListener("click", function () {
-  if (showMenu === true) {
-    mobileLinks.style.display = "block";
-    showMenu = false;
-  } else {
-    mobileLinks.style.display = "none";
-    showMenu = true;
-  }
-});
 
 getApi();
 
@@ -29,16 +16,21 @@ function getApi() {
               <img src="${product.image}" alt="${product.title}" />
             </div>
             <div class="cardContent">
-              <h2>${product.title}</h2>
+              <a class="title" href="details.html?id=${product.id}">${
+          product.title
+        }</a>
               <p>${product.description.slice(0, 100) + "..."}</p>
               
-              <button>Buy for $${product.price}</button>
+              <a class="buyBtn" href="details.html?id=${product.id}">Buy for $${
+          product.price
+        }</a>
             </div>
           </div>
         `;
       }
     });
 }
+
 // TODO:Work with weather apis
 // persisting data in browser
 // work on cart page
